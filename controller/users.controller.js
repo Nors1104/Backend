@@ -17,11 +17,11 @@ function login(peticion=request,respuesta=response){
     findUser(user).then((userFound)=>{
         let pas = "incorrecta";
         if(passwordValidate(userFound,user)){pas="correcta";}
-        /* respuesta.setHeader("Access-Control-Allow-Origin", "*");
-        response.header(
+         respuesta.setHeader("Access-Control-Allow-Origin", "*");
+        /* response.header(
             "Access-Control-Allow-Headers",
             "Origin, X-Requested-With, Content-Type, Accept"
-        ); */
+        );  */
         respuesta.status(201).json({
             msg:`usuario encontrado`,
             pass:pas,
